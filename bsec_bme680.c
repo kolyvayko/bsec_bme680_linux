@@ -196,7 +196,7 @@ int64_t get_timestamp_us()
           tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec); /* localtime */
 
    printf("\"iaq\":%.2f, \"iaq_accuracy\":%d,", iaq, iaq_accuracy);
-   printf("\"gas\":%.2f", gas);
+   printf("\"gas\":%.2f,", gas);
    printf("\"raw_temperature\":%.2f, \"raw_humidity\":%.2f,",
          raw_temperature,
          raw_humidity);
@@ -353,7 +353,7 @@ int main(int argc, char* argv[])
    * = 500 minutes (depending on the config).
    *
    */
-  bsec_iot_loop(_sleep, get_timestamp_us, output_ready, state_save, 10000);
+  bsec_iot_loop(_sleep, get_timestamp_us, output_ready, state_save, 1000);
 
   i2cClose();
   return 0;
