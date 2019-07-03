@@ -28,7 +28,7 @@
 /* definitions */
 
 #define DESTZONE "TZ=Europe/Berlin"
-#define temp_offset (0.0f)
+#define temp_offset (2.0f)
 #define sample_rate_mode (BSEC_SAMPLE_RATE_LP)
 
 int g_i2cFid; // I2C Linux device handle
@@ -196,6 +196,7 @@ int64_t get_timestamp_us()
           tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec); /* localtime */
 
    printf("\"iaq\":%.2f, \"iaq_accuracy\":%d,", iaq, iaq_accuracy);
+   printf("\"gas\":%.2f", gas);
    printf("\"raw_temperature\":%.2f, \"raw_humidity\":%.2f,",
          raw_temperature,
          raw_humidity);
